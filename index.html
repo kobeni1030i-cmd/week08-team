@@ -10,8 +10,7 @@
     <h1 class="font-bold text-xl p-4">登録選手</h1>
     <div class="flex gap-2 mb-4">
     <button id="ALL" class="bg-green-600 text-white p-3">ALL</button>
-    <button id="FW" class="bg-green-600 text-white p-3">FW</button>
-    <button id="MF" class="bg-green-600 text-white p-3">MF</button>
+    <button id="MF/FW" class="bg-green-600 text-white p-3">MF/FW</button>
     <button id="DF" class="bg-green-600 text-white p-3">DF</button>
     <button id="GK" class="bg-green-600 text-white p-3">GK</button>
     </div>
@@ -21,18 +20,17 @@
 </body>
 <script>
     const members = [
-        {name: "伊東純也", position: "FW", comment: "ナイスコーナー"},
+        {name: "伊東純也", position: "MF/FW", comment: "ナイスコーナー"},
         {name: "長友佑都", position: "DF", comment: "バモ"},
-        {name: "鎌田大地", position: "MF", comment: "俺に従え"},
-        {name: "前田大然", position: "FW", comment: "足が速い"},
-        {name: "遠藤航", position: "MF", comment: "背中で語る男"},
+        {name: "鎌田大地", position: "MF/FW", comment: "俺に従え"},
+        {name: "前田大然", position: "MF/FW", comment: "足が速い"},
+        {name: "遠藤航", position: "MF/FW", comment: "背中で語る男"},
         {name: "鈴木彩艶", position: "GK", comment: "絶好調"},
     ];
 
     const memberList = document.querySelector("#memberList");
     const ALL = document.querySelector("#ALL");
-    const FW = document.querySelector("#FW");
-    const MF = document.querySelector("#MF");
+    const MW = document.querySelector("#MF/FW");
     const DF = document.querySelector("#DF");
     const GK = document.querySelector("#GK");
 
@@ -54,12 +52,8 @@
         renderMembers(members);
     });
 
-    FW.addEventListener("click", () => {
-        renderMembers(members.filter((member) => member.position === "FW"));
-    });
-
-    MF.addEventListener("click", () => {
-        renderMembers(members.filter((member) => member.position === "MF"));
+    MW.addEventListener("click", () => {
+        renderMembers(members.filter((member) => member.position === "MF/FW"));
     });
 
     DF.addEventListener("click", () => {
